@@ -1,0 +1,8 @@
+= bootstrap_form_for @skeleton do |f|
+  = f.text_field :name
+  = f.text_field :slug
+  = f.fields_for :settings do |ff|
+    = ff.hidden_field :type
+    = metadata_fields(ff)
+    = value_field(ff)
+  = f.submit 'Save'

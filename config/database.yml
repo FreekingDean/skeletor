@@ -1,0 +1,15 @@
+common: &common
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  min_messages: WARNING
+  username: skeletor_owner
+  password: skeletor_owner
+
+development:
+  database: skeletor_dev
+  <<: *common
+
+test:
+  database: skeletor_test
+  <<: *common

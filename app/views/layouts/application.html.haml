@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Skeletor
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container-fluid
+      .row
+        .col-lg-8.col-lg-offset-2
+          = render 'shared/alerts'
+      .row
+        .col-lg-10.col-lg-offset-1
+          = yield
+    = yield :javascript

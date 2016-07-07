@@ -1,0 +1,25 @@
+%h1 Listing skeletons
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Slug
+      %th Account
+      %th
+      %th
+      %th
+
+  %tbody
+    - @skeletons.each do |skeleton|
+      %tr
+        %td= skeleton.name
+        %td= skeleton.slug
+        %td= skeleton.account_id
+        %td= link_to 'Show', skeleton
+        %td= link_to 'Edit', edit_skeleton_path(skeleton)
+        %td= link_to 'Destroy', skeleton, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Skeleton', new_skeleton_path

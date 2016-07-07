@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @skeleton.name
+%p
+  %b Slug:
+  = @skeleton.slug
+%p
+  %b Account:
+  = @skeleton.account_id
+
+= link_to 'Edit', edit_skeleton_path(@skeleton)
+\|
+= link_to 'Back', skeletons_path
