@@ -15,15 +15,15 @@
         = yield :above_panel
         .col-lg-10.col-lg-offset-1
           .jumbotron
-            %h1 Skeletor
-            %h2 Bootstrap your Rails project
+            %h1=yield(:title).blank? ? 'Skeletor' : yield(:title)
+            %h2=yield(:subtitle).blank? ? 'Bootstrap your Rails project' : yield(:subtitle)
       .row
         .col-lg-10.col-lg-offset-1
           .panel.panel-primary
-            -unless yield(:title).blank?
+            -unless yield(:panel_title).blank?
               .panel-heading
                 .panel-title
-                  = yield :title
+                  = yield :panel_title
             .panel-body
               = yield
             .panel-footer

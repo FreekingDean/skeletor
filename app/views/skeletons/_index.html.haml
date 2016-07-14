@@ -1,0 +1,17 @@
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Slug
+      %th App Type
+      %th Gems
+      %th
+  %tbody
+    -skeletons.each do |skeleton|
+      %tr
+        %td=skeleton.name
+        %td=skeleton.slug
+        %td Rails
+        %td=skeleton.settings.gem_versions.map{|gv| gv.gem_name}.join(', ')
+        %td
+          =link_to 'View', skeleton, class: 'btn btn-raised btn-success'

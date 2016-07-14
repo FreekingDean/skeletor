@@ -1,4 +1,7 @@
-.jumbotron
-  %h1 Welcome to Skeletor
-  %h2 Get started on your first app
-  =link_to 'New Skeleton', new_skeleton_path
+=content_for :title do
+  Welcome to Skeletor
+=content_for :subtitle do
+  Get started on your first app
+=render 'skeletons/index', skeletons: @account.skeletons
+=content_for :footer do
+  =link_to 'New Skeleton', new_skeleton_path, class: 'btn btn-raised btn-primary'
