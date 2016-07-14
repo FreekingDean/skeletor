@@ -12,6 +12,24 @@
         .col-lg-8.col-lg-offset-2
           = render 'shared/alerts'
       .row
+        = yield :above_panel
         .col-lg-10.col-lg-offset-1
-          = yield
-    = yield :javascript
+          .jumbotron
+            %h1 Skeletor
+            %h2 Bootstrap your Rails project
+      .row
+        .col-lg-10.col-lg-offset-1
+          .panel.panel-primary
+            -unless yield(:title).blank?
+              .panel-heading
+                .panel-title
+                  = yield :title
+            .panel-body
+              = yield
+            .panel-footer
+              = yield :footer
+    =javascript_tag do
+      = yield :javascript
+      $.material.init()
+      $.material.input()
+      $.material.ripples()

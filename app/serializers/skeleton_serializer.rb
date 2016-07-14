@@ -1,5 +1,17 @@
+# == Schema Information
+#
+# Table name: skeletons
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  slug       :string
+#  account_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class SkeletonSerializer < ActiveModel::Serializer
-  attributes :name, :slug, :gems, :rails_version
+  attributes :name, :slug, :gems, :database
   has_many :settings
 
   def gems
@@ -8,7 +20,7 @@ class SkeletonSerializer < ActiveModel::Serializer
     end.to_h
   end
 
-  def rails_version
-    object.settings.rails_version.bundler_version
+  def database
+    object.settings.database_setting.try(:value)
   end
 end

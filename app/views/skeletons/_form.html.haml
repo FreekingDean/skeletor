@@ -2,7 +2,10 @@
   = f.text_field :name
   = f.text_field :slug
   = f.fields_for :settings do |ff|
-    = ff.hidden_field :type
-    = metadata_fields(ff)
-    = value_field(ff)
+    .panel.panel-warning
+      .panel-heading= ff.object.setting_name
+      .panel-body
+        = ff.hidden_field :type
+        = metadata_fields(ff)
+        = value_field(ff)
   = f.submit 'Save'

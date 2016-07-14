@@ -6,12 +6,11 @@ gem 'pg'
 gem 'puma'
 gem 'active_model_serializers'
 
-gem 'bootstrap_form'
-gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'sass-rails'
+gem 'redcarpet'
 
 gem 'jbuilder'
 gem 'turbolinks'
@@ -44,4 +43,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
+end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap-material-design'
 end
